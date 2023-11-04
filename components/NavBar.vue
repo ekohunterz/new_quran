@@ -40,7 +40,7 @@ const toggleMenu = () => {
             Do'a Harian
           </NuxtLink>
           <NuxtLink
-            to="/"
+            to="/jadwalShalat"
             class="text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
           >
             Jadwal Shalat
@@ -121,7 +121,7 @@ const toggleMenu = () => {
       Do'a Harian
     </NuxtLink>
     <NuxtLink
-      to="/"
+      to="/jadwalShalat"
       class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
       exact-active-class="text-gray-300"
     >
