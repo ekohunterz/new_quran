@@ -90,42 +90,44 @@ const toggleMenu = () => {
   <!-- Mobile menu (hidden by default) -->
   <div
     v-if="isMenuOpen"
-    class="container absolute inset-x-0 z-[9999] bg-primary pb-3 pt-24 md:hidden"
+    class="container absolute inset-x-0 z-[9999] border-0 bg-primary pb-3 pt-6 shadow-md dark:bg-primary_dark md:hidden"
   >
-    <button
-      v-if="!isDark"
-      class="text-white"
-      @click="toggleDark()"
-    >
-      <IconMoon />
-    </button>
-    <button
-      v-else
-      class="text-white"
-      @click="toggleDark()"
-    >
-      <IconSunHigh />
-    </button>
-    <NuxtLink
-      to="/"
-      class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
-      exact-active-class="text-gray-300"
-    >
-      Al-Qur'an
-    </NuxtLink>
-    <NuxtLink
-      to="/doa"
-      class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
-      exact-active-class="text-gray-300"
-    >
-      Do'a Harian
-    </NuxtLink>
-    <NuxtLink
-      to="/jadwalShalat"
-      class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
-      exact-active-class="text-gray-300"
-    >
-      Jadwal Sholat
-    </NuxtLink>
+    <div class="flex flex-col gap-3">
+      <NuxtLink
+        to="/"
+        class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
+        exact-active-class="text-gray-300"
+      >
+        Al-Qur'an
+      </NuxtLink>
+      <NuxtLink
+        to="/doa"
+        class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
+        exact-active-class="text-gray-300"
+      >
+        Do'a Harian
+      </NuxtLink>
+      <NuxtLink
+        to="/jadwalShalat"
+        class="block text-base font-semibold text-white transition-all duration-300 ease-in-out hover:text-gray-300"
+        exact-active-class="text-gray-300"
+      >
+        Jadwal Sholat
+      </NuxtLink>
+      <button
+        v-if="!isDark"
+        class="text-white"
+        @click="toggleDark()"
+      >
+        <IconMoon />
+      </button>
+      <button
+        v-else
+        class="text-white"
+        @click="toggleDark()"
+      >
+        <IconSunHigh />
+      </button>
+    </div>
   </div>
 </template>

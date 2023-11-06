@@ -60,8 +60,8 @@ useHead({
           />
           <div class="absolute inset-y-0 right-0 flex items-center">
             <button
-              @click="search = ''"
               class="z-[1] flex h-16 w-20 items-center justify-center overflow-hidden rounded-r-full border-[3px] border-white text-primary ring-0 transition-all duration-500 ease-in-out hover:cursor-pointer hover:bg-primary hover:text-secondary focus:outline-none dark:bg-secondary dark:text-slate-800 dark:hover:bg-primary_dark dark:hover:text-secondary"
+              @click="search = ''"
             >
               <IconSearch
                 size="24"

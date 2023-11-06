@@ -105,7 +105,7 @@ useHead({
 <template>
   <div class="bg-secondary dark:bg-slate-950">
     <div class="container py-12">
-      <div class="h-48 rounded-md bg-primary p-6">
+      <div class="h-48 rounded-md bg-primary p-6 dark:bg-primary_dark">
         <div class="flex h-full flex-col">
           <p class="text-2xl font-bold text-secondary">Jadwal Shalat</p>
           <p
@@ -118,23 +118,23 @@ useHead({
             class="mt-auto flex items-center gap-3 text-xl font-semibold capitalize leading-loose text-secondary"
           >
             <IconMapPinFilled /> {{ dataLocation?.cityName }},
-            {{ prayerTime?.daerah.toLowerCase() }},
+            {{ prayerTime?.daerah?.toLowerCase() }},
             {{ dataLocation?.countryName }}
           </p>
         </div>
       </div>
 
-      <div class="mt-12 flex rounded-md bg-gray-200 p-1">
+      <div class="mt-12 flex rounded-md bg-gray-200 p-1 dark:bg-primary_dark dark:text-secondary">
         <div
-          class="w-1/2 rounded-md py-2 text-center font-semibold"
-          :class="tabActive === 'today' ? 'bg-primary text-secondary' : ''"
+          class="w-1/2 cursor-pointer rounded-md py-2 text-center font-semibold"
+          :class="tabActive === 'today' ? 'bg-primary text-secondary dark:bg-black' : ''"
           @click="selectTab('today')"
         >
           Hari Ini
         </div>
         <div
-          class="w-1/2 rounded-md py-2 text-center font-semibold"
-          :class="tabActive === 'month' ? 'bg-primary text-secondary' : ''"
+          class="w-1/2 cursor-pointer rounded-md py-2 text-center font-semibold"
+          :class="tabActive === 'month' ? 'bg-primary text-secondary dark:bg-black' : ''"
           @click="selectTab('month')"
         >
           Bulan Ini
@@ -142,7 +142,7 @@ useHead({
       </div>
 
       <div v-if="tabActive === 'today'">
-        <div class="mt-6 rounded-md bg-gray-200 p-5">
+        <div class="mt-6 rounded-md bg-gray-200 p-5 dark:bg-primary_dark dark:text-secondary">
           <div v-if="isLoading">Loading...</div>
           <div
             v-else
@@ -185,7 +185,7 @@ useHead({
           </div>
         </div>
 
-        <div class="mt-6 rounded-md bg-gray-200 p-5">
+        <div class="mt-6 rounded-md bg-gray-200 p-5 dark:bg-primary_dark dark:text-secondary">
           <div v-if="isLoading">Loading...</div>
           <div
             v-else
@@ -204,31 +204,31 @@ useHead({
         </div>
       </div>
       <div v-else>
-        <div class="mt-6 rounded-md bg-gray-200 p-5">
+        <div class="mt-6 rounded-md bg-gray-200 p-5 dark:bg-primary_dark dark:text-secondary">
           <div v-if="isLoading">Loading...</div>
           <div
             v-else
-            class=""
+            class="overflow-auto"
           >
             <table class="w-full table-auto">
               <thead>
                 <tr>
-                  <th class="bg-gray-200 px-4 py-2 text-left">Tanggal</th>
-                  <th class="bg-gray-200 px-4 py-2">Imsak</th>
-                  <th class="bg-gray-200 px-4 py-2">Subuh</th>
-                  <th class="bg-gray-200 px-4 py-2">Terbit</th>
-                  <th class="bg-gray-200 px-4 py-2">Dhuha</th>
-                  <th class="bg-gray-200 px-4 py-2">Dzuhur</th>
-                  <th class="bg-gray-200 px-4 py-2">Ashar</th>
-                  <th class="bg-gray-200 px-4 py-2">Maghrib</th>
-                  <th class="bg-gray-200 px-4 py-2">Isya</th>
+                  <th class="px-4 py-2 text-left">Tanggal</th>
+                  <th class="px-4 py-2">Imsak</th>
+                  <th class="px-4 py-2">Subuh</th>
+                  <th class="px-4 py-2">Terbit</th>
+                  <th class="px-4 py-2">Dhuha</th>
+                  <th class="px-4 py-2">Dzuhur</th>
+                  <th class="px-4 py-2">Ashar</th>
+                  <th class="px-4 py-2">Maghrib</th>
+                  <th class="px-4 py-2">Isya</th>
                 </tr>
               </thead>
               <tbody>
                 <tr
                   v-for="jadwal in prayerTimeOneMonth"
                   :key="jadwal.tanggal"
-                  class="text-center hover:bg-gray-100"
+                  class="text-center hover:bg-gray-100 dark:hover:bg-black"
                 >
                   <td class="px-4 py-2 text-left">{{ jadwal.tanggal }}</td>
                   <td class="px-4 py-2">{{ jadwal.imsak }}</td>
@@ -257,9 +257,5 @@ table td {
 
 table td {
   padding: 10px;
-}
-
-table tr:hover {
-  background-color: #f5f5f5;
 }
 </style>
